@@ -1,88 +1,125 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int main()
 {
-            //zad1
-    //printf("Hello world!\n");
-    //zad2
-    int a,b;
-    printf("Podaj dwie liczby\n");
-    scanf("%i", &a);
-    scanf("%i", &b);
-    printf("Dodawanie: %d",(a+b));
-    printf("\nOdejmowanie: %d", (a-b));
-    printf("\nMnozenie: %d", (a*b));
-    printf("\nDzielenie: %d", (a/b));
-    printf("\nReszta z dzielenia: %d", (a%b));
-    //zad3
-    if(a>b){
-    printf("\nWiększa jest liczba A = %d",a);
-    }else{
-    printf("\nWiększa jest liczba B = %d",b);
+    /** zad1
+    int n=0;
+    int liczby=0;
+    int suma=0;
+    scanf("%d", &n);
+
+    for(int i=0;i<=n;i++){
+    liczby = i*i;
+    suma += liczby;
     }
-    //zad4
-    int c;
-    printf("\nPodaj jeszcze jedna liczbe\n");
-    scanf("%i", &c);
-        if(a>b && a>c){
-            printf("Najwieksza liczba to A = %d", a);
-        }else if(b>a && b>c){
-            printf("Najwieksza liczba to B = %d", b);
-        }else if(c>a && c>b){
-            printf("Najwieksza liczba to C = %d", c);
+
+    printf("%d",suma);
+
+    **/
+
+    /**zad2
+
+    int a=0;
+    int b=0;
+    int wynik =0;
+
+    scanf("%d",&a);
+    scanf("%d",&b);
+
+    for(int i=0;i<b;i++){
+    wynik = a*a;
     }
-    //zad5
-    printf("\nPodaj mi kod ASCII, a ja ci powiem czy to litera alfabetu!");
-    int kod;
-    scanf("%i",&kod);
-    if(kod >=97 && kod<=122){
-    printf("Tak! Kod ktory podales odpowiada za litere alfabetu!");
-    }else{
-    printf("Nie, kod ktory podales nie odpowiada za litere alfabetu");
+
+    printf("%d",wynik);
+
+    **/
+
+    /**zad3
+
+    int a=0;
+    int b=0;
+    int c=1;
+    int wynik = 1;
+    scanf("%d",&a);
+    scanf("%d",&b);
+
+
+    if(a<b){
+    for(int i=0;i<=c;i++){
+
+    wynik*=a;
+
+    if(wynik>b){
+    printf("a jest wieksze od b gdy jest spotegowane do c, ktore jest rowne %d", c);
+        return;
     }
-    //zad6
-    printf("\nPodaj mi rok a ja ci powiem czy jest on przestepny");
-    int rok;
-    scanf("%i", &rok);
-    if(rok%4==0 && rok%100!=0 && rok%400==0 || rok%400==0 && rok%100==0){
-    printf("Podany rok jest przestepny");
-    }else{
-    printf("Podany rok nie jest przestepny");
+        ++c;
     }
-    //zad7
-    printf("\nPodaj mi dzien,miesiac i rok");
-    int d,m,r;
-    int status=0;
-    scanf("%i",&d);
-    scanf("%i",&m);
-    scanf("%i",&r);
-    if((m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12)&& d>=1 && d<=31){
-    status++;
     }
-    else if(m==2 && (rok%4==0 && rok%100!=0 && rok%400==0 || rok%400==0 && rok%100==0)){
-    if(d>=1 && d<=29){
-    status++;
+    printf("%d",wynik);
+
+    **/
+
+    /**zad4
+
+
+    int n=0;
+    int tab[5];
+
+    for(int i=0;i<5;i++){
+    scanf("%d",&n);
+    tab[i]=n*n;
+    printf("%d\n",tab[i]);
+    }
+    printf("twoja tablica to: ");
+    for(int j=0;j<5;j++){
+    printf(" %d",tab[j]);
+    }
+
+    **/
+
+    /**zad5
+
+    int n=0;
+    printf("Podaj ile liczb chcesz dodac do tablicy");
+    scanf("%d",&n);
+    int a=0;
+
+    int tab[n];
+    printf("Teraz podaj liczby ktore chcesz dodac do tablicy");
+    for(int i=0;i<n;i++){
+    scanf("%d",&a);
+        tab[i]=a;
+    }
+    for(int j=0;j<n;j++){
+        printf("%d",tab[j]);
+    }
+
+    **/
+
+    /**zad7
+
+    int n,sprawdz=0;
+    int counter=2;
+    printf("Podaj liczbe a ja sprawdze czy jest liczba pierwsza");
+
+
+    for(int i=2;i<=counter;i++){
+        scanf("%d",&n);
+        counter++;
+
+    if(n>1&&n%1==0&&n%n==0){
+    sprawdz++;
+        if(n%i==0){
+
+        }
+
     }
     }
 
-    else if(d>=1 && d<=28 && (m==2 && (rok%4==0 && rok%100!=0 && rok%400==0 || rok%400==0 && rok%100==0))){
-    status++;
-    }
-    if((m==4 || m==6 || m==9 || m==11) && d>=1 && d<=30){
-    status++;
-    }
-    printf("%i",status);
-    if(status==1){
-    printf("Podane liczby tworza poprawna date!");
-    }else{
-    printf("Podane liczby tworza niepoprawna date...");
-    }
-    //zad9
-    printf("Podaj dwie pary liczb jako przeciwlegle wierzcholki prostokatata");
-    int w1,w2,w3,w4;
-    scanf("%i",&w1);
-    scanf("%i",&w2);
-    scanf("%i",&w3);
-    scanf("%i",&w4);
+    **/
 
+    return 0;
 }
