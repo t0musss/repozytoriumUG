@@ -1,125 +1,131 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+int n=0;
+    char input;
+    int znak;
+    int liczba;
+    int suma1=0;
+    int znaczek;
 
 int main()
 {
-    /** zad1
-    int n=0;
-    int liczby=0;
-    int suma=0;
-    scanf("%d", &n);
-
-    for(int i=0;i<=n;i++){
-    liczby = i*i;
-    suma += liczby;
-    }
-
-    printf("%d",suma);
-
-    **/
-
-    /**zad2
-
-    int a=0;
-    int b=0;
-    int wynik =0;
-
-    scanf("%d",&a);
-    scanf("%d",&b);
-
-    for(int i=0;i<b;i++){
-    wynik = a*a;
-    }
-
-    printf("%d",wynik);
-
-    **/
-
-    /**zad3
-
-    int a=0;
-    int b=0;
-    int c=1;
-    int wynik = 1;
-    scanf("%d",&a);
-    scanf("%d",&b);
 
 
-    if(a<b){
-    for(int i=0;i<=c;i++){
+    int tab[20];
 
-    wynik*=a;
+    while(1){
 
-    if(wynik>b){
-    printf("a jest wieksze od b gdy jest spotegowane do c, ktore jest rowne %d", c);
+    printf("Wybierz opcje\n");
+    printf("e - koniec programu\n");
+    printf("w - wypisanie tablicy\n");
+    printf("d - dodanie elementu\n");
+    printf("D - dodanie elementu v2\n");
+    printf("u - usuwanie elementu\n");
+    printf("s - sumowanie elementow\n");
+    printf("r - wyswietlanie listy\n");
+    printf("R - wyswietlanie listy od tylu\n");
+
+    scanf("%c",&input);
+
+    switch(input){
+
+    case 'e':
+        printf("Koncze dzialanie!\n");
         return;
-    }
-        ++c;
-    }
-    }
-    printf("%d",wynik);
+        break;
 
-    **/
-
-    /**zad4
-
-
-    int n=0;
-    int tab[5];
-
-    for(int i=0;i<5;i++){
-    scanf("%d",&n);
-    tab[i]=n*n;
-    printf("%d\n",tab[i]);
-    }
-    printf("twoja tablica to: ");
-    for(int j=0;j<5;j++){
-    printf(" %d",tab[j]);
-    }
-
-    **/
-
-    /**zad5
-
-    int n=0;
-    printf("Podaj ile liczb chcesz dodac do tablicy");
-    scanf("%d",&n);
-    int a=0;
-
-    int tab[n];
-    printf("Teraz podaj liczby ktore chcesz dodac do tablicy");
-    for(int i=0;i<n;i++){
-    scanf("%d",&a);
-        tab[i]=a;
-    }
-    for(int j=0;j<n;j++){
-        printf("%d",tab[j]);
-    }
-
-    **/
-
-    /**zad7
-
-    int n,sprawdz=0;
-    int counter=2;
-    printf("Podaj liczbe a ja sprawdze czy jest liczba pierwsza");
-
-
-    for(int i=2;i<=counter;i++){
-        scanf("%d",&n);
-        counter++;
-
-    if(n>1&&n%1==0&&n%n==0){
-    sprawdz++;
-        if(n%i==0){
-
+    case 'w':
+        if(n==0){
+        printf("Tablica jest pusta!\n");
+        }else{
+        wypisz(tab);
         }
+        break;
+
+    case 'd':
+    sprawdzidodaj(tab);
+        break;
+
+    case 'D':
+    sprawdzidodaj(tab);
+        break;
+
+    case 'u':
+    if(n==0){
+    printf("Tablica jest pusta!\n");
+    }else{
+    usun(tab);
+    }
+    break;
+
+    case 's':
+    if(n==0){
+    printf("Tablica jest pusta!");
+    }else{suma(tab);}
+    break;
+
+    case 'r':
+    wywolaj(tab);
+    break;
+
+    case 'R':
+    wyw(tab);
+    break;
+
+    default:
+    printf("Bledny wybor!");
+    break;
+    }
 
     }
-    }
 
-    **/
-
-    return 0;
 }
+void wypisz(char tab[20]){
+for(int i=0;i<n;i++){
+printf("%d ",tab[i]);
+}
+}
+
+void sprawdzidodaj(char tab[20]){
+if(n>=100){
+printf("Brak miejsca w tablicy!\n");
+}else{
+printf("Podaj znak");
+scanf("%d",&znak);
+tab[n]=znak;
+n++;
+}
+}
+
+void usun(char tab[20]){
+printf("Podaj liczbe");
+scanf("%d",&liczba);
+for(int i=0;i<n;i++){
+if(tab[i]==liczba){
+    tab[n]=tab[n-1];
+    n--;
+}
+}
+}
+int suma(char tab[20]){
+for(int i=0;i<n;i++){
+suma1 += tab[i];
+
+}
+printf("Suma wynosi: %d\n",suma1);
+}
+void wywolaj(char tab[20]){
+printf("Podaj znak k");
+scanf("%d",&znaczek);
+        for(int i=0;i<n;i++){
+            printf("%d\n",tab[i]);
+        }
+    }
+void wyw(char tab[20]){
+printf("Podaj znak k");
+scanf("%d",&znaczek);
+for(int i=n-1;i>=0;i--){
+            printf("%d\n",tab[i]);
+        }
+}
+
